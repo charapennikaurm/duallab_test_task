@@ -8,7 +8,7 @@ public:
 
 	time() :hours(), minutes() {};
 
-	time(int hours, int minutes) :hours(hours), minutes(minutes) {};
+	time(const int& hours, const int& minutes) :hours(hours), minutes(minutes) {};
 
 	time(const std::string& s) {
 		hours = std::stoi(s.substr(0, 2));

@@ -23,7 +23,7 @@ std::vector<service> read_from_file(const std::string& filename) {
 	return services;
 }
 
-std::vector<service> select_best(std::vector<service>& services) {
+std::vector<service> select_best(const std::vector<service>& services) {
 	std::vector<service> best_services;
 	for (int i = 0; i < services.size(); ++i) {
 		bool is_best = true;
@@ -40,7 +40,7 @@ std::vector<service> select_best(std::vector<service>& services) {
 	return best_services;
 }
 
-void print_timetable(std::vector<service>& services, std::string filename) {
+void print_timetable(const std::vector<service>& services, const std::string& filename) {
 	std::ofstream fout(filename);
 	for (auto s : services) {
 		if (s.get_company() == "Posh") { fout << s << std::endl; }
